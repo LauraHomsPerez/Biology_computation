@@ -34,3 +34,5 @@ ForEach ($line_in_file in $input_file_contents) {
     }
     $counter++
 }
+
+Read-Host -Prompt "Press Enter to exit"
