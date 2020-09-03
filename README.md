@@ -26,6 +26,9 @@ MNPHPATLESYPTLQWTARDLARLRDISIPRAPVFTPSDVRRIAGNLDVWDAWPLASMHGIPVRWRGGELWFALAAPAFD
 
 4. To run the script, just copy the file you want the duplicates removed from to input_file.txt and run the prep.ps1 with powershell.
 
+<img src="README/gif2.gif" alt="README/gif2.gif">
+
+
 
 ## Remove all sequences, that are not Levansucrase from the file
 
@@ -46,3 +49,4 @@ Levansucrase                       Literary matches Levansucrase
 ^>(?!.*Levansucrase ).*$\r\n.*\r\n Matches anz whole line that starts with > ans does not contain Levansucrase with a space at the end, and a whole line after it and a line break after that.
 
 ```
+<img src="README/gif1.gif" alt="README/gif1.gif">
