@@ -1,7 +1,7 @@
 # Biology_computation
 
 ## What does prep.ps1 PowerShell Script DO?
-1. Powershell will read the contents of the **input_file.txt**, which looks something like this:
+1. Powershell will read the contents of the **input_file.txt**. It should loook something liek this: sequences should be one-liners.
 ```
 >A0A3M8AKQ8.1/53-513 Glycoside hydrolase family 68 protein {ECO:0000313|EMBL:RNB51771.1}
 MSTSTRRMRRPLVGGITAAGVLVGTLFTGTAAAVAQPDLQPGAEPTVHTQQAYAPEDDFTAKWTRADAKQLQRLSDPNAASRENSMPASLTMPTVPQDFPDMSNGEVWVWDTWPLTDEHGNQYSVNGQEIIFSLVADRSLGFDDRHVFAKIGYFFRPAGIPADERPENGGWTYGGLVFKEGVTGTIFEDQSYSHQTQWSGSARIMKGGEIKLFFTDVAFYRDAAGNNIKPYDPRIALSVGKVHANKNGVKLTGFDKVTDLLQADGTYYQTGEQNPYFNFRDPFTFEDPAHPGETYMVFEGNSAMPRESAQCTEEDLGYREGDPYAESLDEVNASGATYQIGNIGLAKAKNDELTEWEFLPPILSANCVTDQTERPQFVFKDGKSYLFTISHRGTFAAGLDGPEGVYGFVGDGIRSDFQPLNSGSGLALGNPTNLNFAGGQPFAPDYNQHPGHFQAYSHYVMPGGLVQSFIDTIGTHDDFVRGGTLAPTVKMDIEGASTSVDYSYGTGGLGGWADIPANLDVNSGGKLQ
@@ -19,10 +19,10 @@ MNLKLLAKKATILTLSTAILAGGSGLVHAEQKAHEDTKEDYGISHITRADMEAMAKQHGNDNFEVPKFDASTIQNIPSAT
 MNPHPATLESYPTLQWTARDLARLRDISIPRAPVFTPSDVRRIAGNLDVWDAWPLASMHGIPVRWRGGELWFALAAPAFDDPEERHGTARIHHFHRIDGQFRHIGATFEEGFTPGSREWSGSALFEDGVVTLYFTAAGERGETEPTFRQRIFACTTGLAETGDAVFTGWSDPVEQVIPANIVYMNRHDGTGELGEIKAFRDPAPWRAEDGVDHLLFTASSARHLGLHNGLIGCARRGDADPEGGVFEKRPPLVDASGVNNELERPHIVAYDGRLYLFWSTQAKVFAPGIDAPTGLYGAVADGFGGPWRLLNGHGLVFANPQGEPFQAYSWWVLPDLSVTSFVDYWGIDDAAAKRKPEGRAHFGGTFAPFLHLRLEGDVATLR
 ```
 
-2. It compare each the sequence name from each line that starts with **>** and only keep the one that appears first, deleting the "duplicates"
+2. It will search for duplicates of sequence names (**A0A3M8AKQ8**) from each line that starts with **>** only keep the first found.
 >**A0A3M8AKQ8**.1/53-513 Glycoside hydrolase family 68 protein {ECO:0000313|EMBL:RNB51771.1}
 
-3. Results will be put in the results.txt in the same directory
+3. Results will be put in the **results.txt** in the same directory
 
 4. To run the script, just copy the file you want the duplicates removed from to input_file.txt and run the prep.ps1 with powershell.
 
@@ -43,6 +43,6 @@ Levansucrase                       Literary matches Levansucrase
 (?!.*Levansucrase ).*$             Matches any whole line that does not contain Levansucrase with a space at the end
 ^>(?!.*Levansucrase ).*$           Matches any whole line that starts with > and does not contain Levansucrase with a space at the end.
 ^>(?!.*Levansucrase ).*$\r\n.*     Matches anz whole line that starts with > ans does not contain Levansucrase with a space at the end, and a whole line after it.
->(?!.*Levansucrase ).*$\r\n.*\r\n` Matches anz whole line that starts with > ans does not contain Levansucrase with a space at the end, and a whole line after it and a line break after that.
+>(?!.*Levansucrase ).*$\r\n.*\r\n  Matches anz whole line that starts with > ans does not contain Levansucrase with a space at the end, and a whole line after it and a line break after that.
 
 ```
