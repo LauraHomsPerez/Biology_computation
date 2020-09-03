@@ -43,6 +43,6 @@ Levansucrase                       Literary matches Levansucrase
 (?!.*Levansucrase ).*$             Matches any whole line that does not contain Levansucrase with a space at the end
 ^>(?!.*Levansucrase ).*$           Matches any whole line that starts with > and does not contain Levansucrase with a space at the end.
 ^>(?!.*Levansucrase ).*$\r\n.*     Matches anz whole line that starts with > ans does not contain Levansucrase with a space at the end, and a whole line after it.
->(?!.*Levansucrase ).*$\r\n.*\r\n  Matches anz whole line that starts with > ans does not contain Levansucrase with a space at the end, and a whole line after it and a line break after that.
+^>(?!.*Levansucrase ).*$\r\n.*\r\n Matches anz whole line that starts with > ans does not contain Levansucrase with a space at the end, and a whole line after it and a line break after that.
 
 ```
